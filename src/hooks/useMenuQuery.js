@@ -12,13 +12,13 @@ export const useMenuQuery = () => {
         menuItems {
           nodes {
             label
-            url
+            path
             parentId
             id
             childItems {
               nodes {
                 label
-                url
+                path
                 id
               }
             }

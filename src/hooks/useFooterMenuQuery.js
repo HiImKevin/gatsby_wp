@@ -12,13 +12,13 @@ export const useFooterMenuQuery = () => {
         menuItems {
           nodes {
             label
-            url
+            path
             parentId
             id
             childItems {
               nodes {
                 label
-                url
+                path
                 id
               }
             }

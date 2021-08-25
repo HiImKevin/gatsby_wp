@@ -8,7 +8,7 @@ const Navigation = ({ menu }) => (
         <li style={{ padding: `20px` }} key={mainItem.id}>
           <Link
             style={{ textDecoration: `none` }}
-            to={mainItem.url}
+            to={mainItem.path}
             activeClassName={navActive}
           >
             {mainItem.label}
@@ -22,7 +22,7 @@ const Navigation = ({ menu }) => (
                 <li key={childItem.id}>
                   <Link
                     style={{ textDecoration: `none` }}
-                    to={childItem.url}
+                    to={childItem.path}
                     activeClassName={navActive}
                   >
                     {childItem.label}
