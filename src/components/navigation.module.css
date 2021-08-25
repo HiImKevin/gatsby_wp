@@ -1,0 +1,12 @@
+.navActive {
+  color: #ee2562;
+}
+
+.dropdownMenu {
+  list-style-type: none;
+  text-decoration: none;
+  display: none;
+}
+.dropdownMenu:hover {
+  display: block;
+}

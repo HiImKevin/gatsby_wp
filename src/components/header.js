@@ -1,42 +1,24 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import Navigation from "./navigation"
+import { useMenuQuery } from "../hooks/useMenuQuery"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+const Header = () => {
+  const { site, wpMenu } = useMenuQuery()
+  return (
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        height: `90px`,
+        backgroundColor: `#1fe01f`,
+        display: `flex`,
+        justifyContent: `space-between`,
+        alignItems: `center`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <h1 style={{ marginBottom: 0 }}>{site.siteMetadata.title}</h1>
+      <Navigation menu={wpMenu.menuItems.nodes} />
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  )
 }
 
 export default Header

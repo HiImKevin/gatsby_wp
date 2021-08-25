@@ -5,8 +5,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = ({data}) => (
-  <Layout>
+const IndexPage = ({ data }) => (
+  <Layout
+    style={{ minHeight: `100vh`, display: `flex`, flexDirection: `column` }}
+  >
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -25,12 +27,12 @@ const IndexPage = ({data}) => (
     </p>
 
     <h1>My WordPress Blog</h1>
-      <h4>Posts</h4>
-      {data.allWpPage.edges.map(({ node }) => (
-        <div>
-          <Link to={node.uri}>{node.title}</Link>
-        </div>
-      ))}
+    <h4>Posts</h4>
+    {data.allWpPage.edges.map(({ node }) => (
+      <div>
+        <Link to={node.uri}>{node.title}</Link>
+      </div>
+    ))}
   </Layout>
 )
 
@@ -38,14 +40,14 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-        allWpPage {
-          edges {
-          node {
-            title
-            id
-            uri
-          }
-          }
+    allWpPage {
+      edges {
+        node {
+          title
+          id
+          uri
         }
+      }
+    }
   }
 `
