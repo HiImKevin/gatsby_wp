@@ -16,6 +16,7 @@ module.exports = {
         url: `http://147.182.178.79/graphql`,
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
