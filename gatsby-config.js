@@ -13,7 +13,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `http://147.182.178.79/graphql`,
+        url: `https://bustedcontroller.com/graphql`,
       },
     },
     `gatsby-plugin-postcss`,
