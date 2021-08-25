@@ -17,6 +17,7 @@ const WpPage = ({
           backgroundColor: `#fff`,
           borderRadius: `15px`,
           boxShadow: `0px 3px 15px rgba(0,0,0,0.2)`,
+          width: `800px`,
         }}
       >
         <h1>{title}</h1>
