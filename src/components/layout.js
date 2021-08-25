@@ -11,9 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-//import "@wordpress/block-library/build-style/editor.css"
+import "@wordpress/block-library/build-style/editor.css"
 import "@wordpress/block-library/build-style/style.css"
-//import "@wordpress/block-library/build-style/theme.css"
+import "@wordpress/block-library/build-style/theme.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
