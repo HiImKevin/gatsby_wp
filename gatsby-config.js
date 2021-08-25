@@ -16,7 +16,6 @@ module.exports = {
         url: `https://bustedcontroller.com/graphql`,
       },
     },
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
