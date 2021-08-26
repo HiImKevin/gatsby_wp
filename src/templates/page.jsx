@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { graphql } from "gatsby"
-import React from "react"
 import parse, { attributesToProps } from "html-react-parser"
-import Layout from "../components/layout"
 import isBoolean from "lodash.isboolean"
 import isEmpty from "lodash.isempty"
+import React from "react"
+
 import Hero from "../components/hero"
+import Layout from "../components/layout"
+
 function isBooleanString(string) {
   return string === "true" || string === "false"
 }
@@ -20,9 +23,6 @@ function isJSON(string) {
   }
 
   return true
-}
-const components = {
-  hero: Hero,
 }
 
 function toCamelCase(string) {
@@ -68,7 +68,11 @@ function transformProps(props) {
   return transformedProps
 }
 
-const WpPage = ({
+const components = {
+  hero: Hero
+}
+
+const Page = ({
   data: {
     wpPage: { seo, content },
   },
@@ -93,49 +97,20 @@ const WpPage = ({
         return <Component {...props} />
       }
     },
-  })
+  }) 
 
   return (
     <Layout seo={seo} pageContext={pageContext}>
-      <div style={{ maxWidth: `960px`, margin: `20px auto` }}>
-        {reactedContent}
-      </div>
+      {reactedContent}
     </Layout>
   )
 }
 
-// const WpPage = ({
-//   data: {
-//     wpPage: { title, content, id },
-//   },
-// }) => {
-//   return (
-//     <Layout>
-//       <div
-//         className={`post-${id}`}
-//         style={{
-//           padding: `30px`,
-//           margin: `30px 0`,
-//           backgroundColor: `#fff`,
-//           borderRadius: `15px`,
-//           boxShadow: `0px 3px 15px rgba(0,0,0,0.2)`,
-//           width: `800px`,
-//         }}
-//       >
-//         <h1>{title}</h1>
-//         <div dangerouslySetInnerHTML={{ __html: content }} />
-//       </div>
-//     </Layout>
-//   )
-// }
-
-export default WpPage
+export default Page
 
 export const query = graphql`
-  query ($id: String) {
+  query ($id: String!) {
     wpPage(id: { eq: $id }) {
-      id
-      title
       content
     }
   }
