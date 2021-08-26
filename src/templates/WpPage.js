@@ -97,7 +97,9 @@ const WpPage = ({
 
   return (
     <Layout seo={seo} pageContext={pageContext}>
-      {reactedContent}
+      <div style={{ maxWidth: `960px`, margin: `20px auto` }}>
+        {reactedContent}
+      </div>
     </Layout>
   )
 }
