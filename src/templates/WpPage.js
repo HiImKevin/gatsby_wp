@@ -4,7 +4,7 @@ import parse, { attributesToProps } from "html-react-parser"
 import Layout from "../components/layout"
 import isBoolean from "lodash.isboolean"
 import isEmpty from "lodash.isempty"
-import Header from "../components/header"
+import Hero from "../components/hero"
 function isBooleanString(string) {
   return string === "true" || string === "false"
 }
@@ -22,7 +22,7 @@ function isJSON(string) {
   return true
 }
 const components = {
-  header: Header,
+  hero: Hero,
 }
 
 function toCamelCase(string) {
