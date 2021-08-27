@@ -21,8 +21,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   if (allWpPage.nodes.length) {
     allWpPage.nodes.map(page => {
-      console.log("******************************")
-      console.log(page)
       actions.createPage({
         path: page.uri,
         component: template,

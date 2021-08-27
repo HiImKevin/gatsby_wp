@@ -5,7 +5,9 @@ import isBoolean from "lodash.isboolean"
 import isEmpty from "lodash.isempty"
 import React from "react"
 
-import Hero from "../components/hero"
+import Hero from "../components/hero/hero"
+import CTA from "../components/cta/cta"
+import CTA2 from "../components/cta2/cta2"
 import Layout from "../components/layout"
 
 function isBooleanString(string) {
@@ -32,6 +34,8 @@ function toCamelCase(string) {
 }
 
 function transformValue(value) {
+  console.log("HEY VALUE")
+  console.log(value)
   if (isJSON(value)) {
     const parsedJSON = JSON.parse(value)
 
@@ -39,7 +43,7 @@ function transformValue(value) {
       return parsedJSON.map(item => transformProps(item))
     if (typeof parsedJSON === "object" && parsedJSON !== null)
       return transformProps(parsedJSON)
-
+    console.log(parsedJSON);
     return parsedJSON
   }
 
@@ -52,24 +56,21 @@ function transformValue(value) {
 }
 
 function transformProps(props) {
-  const transformedProps = {}
+  const transformedProps = {};
+  Object.keys(props).forEach((propName) => {
 
-  Object.keys(props).forEach(propName => {
-    const transformedValue = transformValue(props[propName])
-    if (
-      !transformedValue &&
-      isEmpty(transformedValue) &&
-      !isBoolean(transformedValue)
-    )
-      return
-    transformedProps[toCamelCase(propName)] = transformedValue
-  })
-
-  return transformedProps
+    const transformedValue = transformValue(props[propName]);
+    if (!transformedValue && isEmpty(transformedValue) && !isBoolean(transformedValue)) return;
+    transformedProps[toCamelCase(propName)] = transformedValue;
+  });
+  console.log(transformProps);
+  return transformedProps;
 }
 
 const components = {
-  hero: Hero
+  hero: Hero,
+  cta: CTA,
+  cta2: CTA2
 }
 
 const Page = ({
@@ -91,9 +92,9 @@ const Page = ({
         const Component = components[domNode.name]
 
         if (!Component) return null
-
+        console.log("attributes:");
+        console.log(domNode);
         const props = transformProps(attributesToProps(domNode.attribs))
-
         return <Component {...props} />
       }
     },
