@@ -34,8 +34,6 @@ function toCamelCase(string) {
 }
 
 function transformValue(value) {
-  console.log("HEY VALUE")
-  console.log(value)
   if (isJSON(value)) {
     const parsedJSON = JSON.parse(value)
 
@@ -43,7 +41,6 @@ function transformValue(value) {
       return parsedJSON.map(item => transformProps(item))
     if (typeof parsedJSON === "object" && parsedJSON !== null)
       return transformProps(parsedJSON)
-    console.log(parsedJSON);
     return parsedJSON
   }
 
@@ -63,7 +60,6 @@ function transformProps(props) {
     if (!transformedValue && isEmpty(transformedValue) && !isBoolean(transformedValue)) return;
     transformedProps[toCamelCase(propName)] = transformedValue;
   });
-  console.log(transformProps);
   return transformedProps;
 }
 
@@ -92,8 +88,6 @@ const Page = ({
         const Component = components[domNode.name]
 
         if (!Component) return null
-        console.log("attributes:");
-        console.log(domNode);
         const props = transformProps(attributesToProps(domNode.attribs))
         return <Component {...props} />
       }
