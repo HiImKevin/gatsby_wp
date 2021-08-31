@@ -97,7 +97,7 @@ const Header = () => {
                 <span className="sr-only">{site.siteMetadata?.title}</span>
                 <Link to="/">
                   <img
-                    className="h-8 w-auto sm:h-10"
+                    className="h-10 w-10"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                     alt="Company Logo"
                   />
@@ -334,7 +334,7 @@ const Header = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <img
-                        className="h-11 w-11"
+                        className="h-10 w-10"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                         alt="Workflow"
                       />
