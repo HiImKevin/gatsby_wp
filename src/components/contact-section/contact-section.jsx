@@ -1,7 +1,7 @@
 import * as React from "react"
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 
-const ContactSection = ({
+const Contact = ({
     myText,
   myText2,
   myText3
@@ -72,4 +72,4 @@ const ContactSection = ({
     )
 }
 
-export default ContactSection
+export default Contact
