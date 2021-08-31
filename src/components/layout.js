@@ -28,12 +28,6 @@ const Layout = ({ seo, children, pageContext }) => {
       }
     }
   `)
-  console.log("SEO::::")
-  console.log(seo)
-  console.log("PAGECONTEXT::::")
-  console.log(pageContext)
-  console.log("CHILDREN::::")
-  console.log(children)
   return (
     <MainContext.Provider value={pageContext}>
       {seo && <SEO {...seo} />}

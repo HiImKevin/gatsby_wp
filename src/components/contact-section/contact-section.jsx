@@ -2,16 +2,16 @@ import * as React from "react"
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 
 const ContactSection = ({
-    headingText,
-    contactHours,
-    phoneNum
+    myText,
+  myText2,
+  myText3
 }) => {
     return (
         <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">{headingText}</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">{myText}</h2>
             <div className="mt-3">
               <p className="text-lg text-gray-500">
                 Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
@@ -24,8 +24,8 @@ const ContactSection = ({
                   <PhoneIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
                 </div>
                 <div className="ml-3 text-base text-gray-500">
-                  <p>{phoneNum}</p>
-                  <p className="mt-1">{contactHours}</p>
+                  <p>{myText3}</p>
+                  <p className="mt-1">{myText2}</p>
                 </div>
               </div>
               <div className="mt-6 flex">

@@ -87,6 +87,8 @@ const Page = ({
     },
     replace: domNode => {
       if (domNode.type === "tag") {
+        console.log("DOMNODE NAME");
+        console.log(components[domNode.name])
         const Component = components[domNode.name]
 
         if (!Component) return null
