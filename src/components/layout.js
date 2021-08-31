@@ -11,12 +11,14 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import MainContext from "../context/main"
+import SEO from "./seo/seo"
 import "@wordpress/block-library/build-style/editor.css"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ seo, children, pageContext }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,19 +28,40 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  console.log("SEO::::")
+  console.log(seo)
+  console.log("PAGECONTEXT::::")
+  console.log(pageContext)
+  console.log("CHILDREN::::")
+  console.log(children)
   return (
-    <div
-      style={{ minHeight: `100vh`, display: `flex`, flexDirection: `column` }}
-    >
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main>{children}</main>
+    <MainContext.Provider value={pageContext}>
+      {seo && <SEO {...seo} />}
+      <div
+        style={{ minHeight: `100vh`, display: `flex`, flexDirection: `column` }}
+      >
+        <Header />
+        <div>
+          <main>{children}</main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </MainContext.Provider>
   )
 }
+
+export const query = graphql`
+  fragment wpPageSeo on WpPage {
+    seo {
+      canonical
+      cornerstone
+      focuskw
+      metaDesc
+      metaKeywords
+      title
+    }
+  }
+`
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

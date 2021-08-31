@@ -107,6 +107,7 @@ export const query = graphql`
   query ($id: String!) {
     wpPage(id: { eq: $id }) {
       content
+      ...wpPageSeo
     }
   }
 `

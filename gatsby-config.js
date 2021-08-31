@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby HeadlessWP Demo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Build something clients will love with a fast Gatsby frontend and a familiar WordPress setup.`,
+    author: `@envizionlabs`,
+    siteUrl: `https://gatsbywpmain22457.gatsbyjs.io/`,
   },
   plugins: [
     {
@@ -41,6 +41,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

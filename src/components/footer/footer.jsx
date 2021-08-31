@@ -50,24 +50,24 @@ const Footer = () => {
     ))
   )
   return (
-    <footer style={{marginTop: `auto`}} className="bg-gray-100">
+    <footer style={{marginTop: `auto`}} className="bg-gray-50">
     <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
       <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
         {wpMenu.menuItems.nodes.map((item) => (
           <div key={item.label} className="px-5 py-2">
-            <Link className="text-base text-gray-500 hover:text-gray-900" to={item.path}>{item.label}</Link>
+            <Link className="text-base text-gray-600 hover:text-gray-900" to={item.path}>{item.label}</Link>
           </div>
         ))}
       </nav>
       <div className="mt-8 flex justify-center space-x-6">
           {wpMenu.socialMenu.socialArray.map((item) => (
-            <a target="_blank" rel="noreferrer" key={item.socialName} href={item.socialUrl} className="text-gray-400 hover:text-gray-500">
+            <a target="_blank" rel="noreferrer" key={item.socialName} href={item.socialUrl} className="text-gray-500 hover:text-gray-600">
               <span className="sr-only">{item.socialName}</span>
               {<item.icon className="h-5 w-5" aria-hidden="true" />}
             </a>
           ))}
         </div>
-      <p className="mt-8 text-center text-base text-gray-400">&copy; {dateYear} {site.siteMetadata?.title}. All rights reserved.</p>
+      <p className="mt-8 text-center text-base text-gray-500">&copy; {dateYear} {site.siteMetadata?.title}. All rights reserved.</p>
     </div>
   </footer>
   )
