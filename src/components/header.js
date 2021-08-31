@@ -334,7 +334,7 @@ const Header = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <img
-                        className="h-8 w-auto"
+                        className="h-11 w-11"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                         alt="Workflow"
                       />
