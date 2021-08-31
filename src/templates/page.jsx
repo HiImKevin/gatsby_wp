@@ -8,6 +8,7 @@ import React from "react"
 import Hero from "../components/hero/hero"
 import CTA from "../components/cta/cta"
 import CTA2 from "../components/cta2/cta2"
+import ContactSection from "../components/contact-section/contact-section"
 import Layout from "../components/layout"
 
 function isBooleanString(string) {
@@ -66,7 +67,8 @@ function transformProps(props) {
 const components = {
   hero: Hero,
   cta: CTA,
-  cta2: CTA2
+  cta2: CTA2,
+  contactSection: ContactSection
 }
 
 const Page = ({
