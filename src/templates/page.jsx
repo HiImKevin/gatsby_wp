@@ -9,6 +9,9 @@ import Hero from "../components/hero/hero"
 import CTA from "../components/cta/cta"
 import CTA2 from "../components/cta2/cta2"
 import Contact from "../components/contact-section/contact-section"
+import Promo from "../components/promo/promo"
+import Products from "../components/products/products"
+import Product from "../components/product/product"
 import Layout from "../components/layout"
 
 function isBooleanString(string) {
@@ -69,7 +72,9 @@ const components = {
   cta: CTA,
   cta2: CTA2,
   contact: Contact,
-  
+  promo: Promo,
+  products: Products,
+  product: Product
 }
 
 const Page = ({

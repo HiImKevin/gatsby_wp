@@ -13,9 +13,6 @@ import Header from "./header"
 import Footer from "./footer"
 import MainContext from "../context/main"
 import SEO from "./seo/seo"
-import "@wordpress/block-library/build-style/editor.css"
-import "@wordpress/block-library/build-style/style.css"
-import "@wordpress/block-library/build-style/theme.css"
 import "./layout.css"
 
 const Layout = ({ seo, children, pageContext }) => {
