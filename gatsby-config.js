@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby HeadlessWP Demo`,
     description: `Build something clients will love with a fast Gatsby frontend and a familiar WordPress setup.`,
     author: `@envizionlabs`,
-    siteUrl: `https://gatsbywpmain22457.gatsbyjs.io/`,
+    siteUrl: `http://headlesswpgatsby.local/`,
   },
   plugins: [
     {
@@ -13,7 +13,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `https://bustedcontroller.com/graphql`,
+        url: `http://134.122.18.223/graphql.`,
       },
     },
     `gatsby-plugin-postcss`,

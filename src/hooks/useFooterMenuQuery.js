@@ -9,12 +9,6 @@ export const useFooterMenuQuery = () => {
         }
       }
       wpMenu(name: { eq: "footerMenu" }) {
-        socialMenu {
-          socialArray {
-            socialName
-            socialUrl
-          }
-        }
         menuItems {
           nodes {
             label
