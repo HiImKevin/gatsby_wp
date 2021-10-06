@@ -57,14 +57,18 @@ function transformValue(value) {
 }
 
 function transformProps(props) {
-  const transformedProps = {};
-  Object.keys(props).forEach((propName) => {
-
-    const transformedValue = transformValue(props[propName]);
-    if (!transformedValue && isEmpty(transformedValue) && !isBoolean(transformedValue)) return;
-    transformedProps[toCamelCase(propName)] = transformedValue;
-  });
-  return transformedProps;
+  const transformedProps = {}
+  Object.keys(props).forEach(propName => {
+    const transformedValue = transformValue(props[propName])
+    if (
+      !transformedValue &&
+      isEmpty(transformedValue) &&
+      !isBoolean(transformedValue)
+    )
+      return
+    transformedProps[toCamelCase(propName)] = transformedValue
+  })
+  return transformedProps
 }
 
 const components = {
@@ -74,7 +78,7 @@ const components = {
   contact: Contact,
   promo: Promo,
   products: Products,
-  product: Product
+  product: Product,
 }
 
 const Page = ({
@@ -93,8 +97,6 @@ const Page = ({
     },
     replace: domNode => {
       if (domNode.type === "tag") {
-        console.log("DOMNODE NAME");
-        console.log(components[domNode.name])
         const Component = components[domNode.name]
 
         if (!Component) return null
@@ -102,12 +104,13 @@ const Page = ({
         return <Component {...props} />
       }
     },
-  }) 
+  })
 
   return (
-    <Layout seo={seo} pageContext={pageContext}>
+    <>
+      <h1>Hey this is using page template</h1>
       {reactedContent}
-    </Layout>
+    </>
   )
 }
 

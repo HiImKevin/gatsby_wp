@@ -17,10 +17,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { allWpPage } = result.data
 
   // Define the template to use
-  const template = require.resolve(`./src/templates/page.jsx`)
-
+  let template
   if (allWpPage.nodes.length) {
     allWpPage.nodes.map(page => {
+      if (page.id === "cG9zdDo1")
+        template = require.resolve(`./src/templates/index.jsx`)
+      else template = require.resolve(`./src/templates/page.jsx`)
+
       actions.createPage({
         path: page.uri,
         component: template,
